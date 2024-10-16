@@ -82,6 +82,7 @@
 })
 function createStars() {
     const app = document.getElementById('app');
+    console.log("Creating stars...");  // 检查函数是否被调用
     for (let i = 0; i < 30; i++) {
         let star = document.createElement('div');
         star.classList.add('star');
@@ -93,14 +94,15 @@ function createStars() {
         star.style.left = left + 'px';
         star.style.animationDelay = delay + 's';
 
-        app.appendChild(star);
+        console.log("Appending star: ", star);  // 检查每个星星是否被生成
+        app.appendChild(star);  // 插入星星
     }
 }
 
-
-window.onload = function () {
+window.addEventListener('load', function() {
     createStars();
-}
+});
+
 
 
 

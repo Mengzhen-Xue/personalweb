@@ -37,7 +37,6 @@ html {
 }
 
 
-
         body {
             font-family: 'Poppins', sans-serif;
             font-size: 1.8rem;
@@ -51,61 +50,45 @@ html {
         }
 
         #app {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-            z-index: 2; /* Place the stars on top of the background */
-        }
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          overflow: hidden;
+          z-index: 10;
+          
+          pointer-events: none;
 
+        }
+        
         .star {
-            width: 5px;
-            height: 5px;
-            background-color: rgba(255, 255, 255, 0.7); /* Bright star color */
-            position: absolute;
-            border-radius: 50%;
-            animation: star-fall 3s linear infinite;
-            z-index: 3; /* Ensure stars are above header */
+          width: 5px;
+          height: 5px;
+          background-color: rgba(255, 255, 255, 0.7) ;
+          position: absolute;
+          border-radius: 50%;
+          animation: star-fall 3s linear infinite;
+          z-index: 11; /* 确保星星在最前面 */
         }
-
+        
+        
+        
         @keyframes star-fall {
-            0% {
-                opacity: 0;
-                transform: translate3d(0, 0, 0);
-            }
-            50% {
-                opacity: 1;
-                transform: translate3d(-200px, 200px, 0);
-            }
-            100% {
-                opacity: 0;
-                transform: translate3d(-300px, 300px, 0);
-            }
+          0% {
+            opacity: 0;
+            transform: translate3d(0, 0, 0);
+          }
+          50% {
+            opacity: 1;
+            transform: translate3d(-200px, 200px, 0);
+          }
+          100% {
+            opacity: 0;
+            transform: translate3d(-300px, 300px, 0);
+          }
         }
-
-        header {
-            position: relative;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-            color: white;
-            z-index: 1; /* Behind the stars */
-            padding: 10rem;
-        }
-
-        .header__title {
-            font-size: 4rem;
-        }
-
-        p {
-            font-size: 2rem;
-            font-style: italic;
-            color: #ddd;
-        }
-
-
-
+        
 ul {
   list-style: none;
 }
@@ -129,7 +112,7 @@ a {
   width: 100%;
   background: var(--main-blue);
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
-  z-index: 10;
+  z-index: 15;
   
 }
 
@@ -169,6 +152,13 @@ header {
   height: 100vh;
   background-color: var(--main-gray);
   background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+
+  position: relative;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  color: white;
+  z-index: 10; /* Behind the stars */
+  padding: 10rem;
 }
 
 header>p {

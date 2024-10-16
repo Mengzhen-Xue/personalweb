@@ -7,7 +7,6 @@
     <title>Mengzhen Xue</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Meteor Animation with Header</title>
 
 </head>
 
@@ -146,7 +145,27 @@
             </div>
             <p>Mengzhen Xue<span>@2024</span></p>
         </footer>
-        <script src="script.js" type="text/JavaScript">
+        <script>
+            function createStars() {
+            const app = document.getElementById('app');
+            for (let i = 0; i < 50; i++) {
+                let star = document.createElement('div');
+                star.classList.add('star');
+                let top = Math.random() * window.innerHeight;
+                let left = Math.random() * window.innerWidth;
+                let delay = Math.random() * 5;
+
+                star.style.top = top + 'px';
+                star.style.left = left + 'px';
+                star.style.animationDelay = delay + 's';
+
+                app.appendChild(star);
+            }
+        }
+
+        window.onload = function() {
+            createStars();
+        }
             
         </script>
 </body>
