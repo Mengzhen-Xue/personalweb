@@ -79,5 +79,28 @@
             emailErrorEl.innerText = '';
         }
     }
-})();
+})
+function createStars() {
+    const app = document.getElementById('app');
+    for (let i = 0; i < 30; i++) {
+        let star = document.createElement('div');
+        star.classList.add('star');
+        let top = Math.random() * window.innerHeight;
+        let left = Math.random() * window.innerWidth;
+        let delay = Math.random() * 10;
+
+        star.style.top = top + 'px';
+        star.style.left = left + 'px';
+        star.style.animationDelay = delay + 's';
+
+        app.appendChild(star);
+    }
+}
+
+
+window.onload = function () {
+    createStars();
+}
+
+
 
